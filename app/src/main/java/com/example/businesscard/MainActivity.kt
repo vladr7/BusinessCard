@@ -51,11 +51,17 @@ fun LogoNameTitle() {
 
     Column(
         modifier = Modifier
-            .fillMaxHeight()
+            .fillMaxHeight(0.5f)
             .fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
+        Spacer(
+            modifier = Modifier
+                .weight(1f)
+        )
+
         Image(
             painter = painterResource(id = R.drawable.android_logo),
             contentDescription = null,
@@ -76,6 +82,12 @@ fun LogoNameTitle() {
             fontWeight = FontWeight.Bold,
             color = Color.Green
         )
+
+        Spacer(
+            modifier = Modifier
+                .weight(0.5f)
+        )
+
         PersonalInfo(
             phoneNr = "0757123456",
             share = "@AndroidDev",
@@ -92,11 +104,12 @@ fun ColumnScope.PersonalInfo(
 ) {
     Column(
         modifier = Modifier
-            .fillMaxHeight(0.5f)
+            .fillMaxHeight(0.4f)
             .fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.Start,
     ) {
+
         InfoItem(icon = painterResource(id = R.drawable.ic_baseline_local_phone_24), text = phoneNr)
         InfoItem(icon = painterResource(id = R.drawable.ic_baseline_share_24), text = share)
         InfoItem(icon = painterResource(id = R.drawable.ic_baseline_email_24), text = email)
